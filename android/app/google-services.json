@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "163246190332",
+    "project_id": "schedule-time-2828b",
+    "storage_bucket": "schedule-time-2828b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163246190332:android:0fad9689d7923c7817b179",
+        "android_client_info": {
+          "package_name": "com.scheduletime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163246190332-959v0icd2p0jlhqjn1o411huskffvcm7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scheduletime",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "163246190332-ebdqtinp7lno2jrk5opohsbg0jq90llj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scheduletime",
+            "certificate_hash": "da9e709a9600d67555b079e0c54d0f74330752f3"
+          }
+        },
+        {
+          "client_id": "163246190332-e1ecm5aaflfsti85p0pdc4j5vqd726jd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdQ4BqmpXDRUYN-w6k7R7bzwyytVMOpWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163246190332-d9kr2inlcfetuhddtt0r4edi7f64c8qq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
