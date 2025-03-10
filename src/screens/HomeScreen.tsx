@@ -1,26 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
   Button,
   Switch,
   StyleSheet,
-  ScrollView,
   TouchableOpacity,
   Alert,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {VolumeManager} from 'react-native-volume-manager';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import { VolumeManager } from 'react-native-volume-manager';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import BackgroundTimer from 'react-native-background-timer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {useAuth} from '../context/AuthContext';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useAuth } from '../context/AuthContext';
 
-const ScheduleVolumeManager = ({navigation}: any) => {
-  const {setUser} = useAuth();
+const ScheduleVolumeManager = ({ navigation }: any) => {
+  const { setUser } = useAuth();
   const [startTime, setStartTime] = useState<any>(new Date());
   const [endTime, setEndTime] = useState<any>(new Date());
   const [showStartPicker, setShowStartPicker] = useState<any>(false);

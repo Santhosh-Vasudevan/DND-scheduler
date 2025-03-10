@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -11,18 +11,18 @@ import DateTimePicker, {
   DateTimePickerEvent,
 } from '@react-native-community/datetimepicker';
 import auth from '@react-native-firebase/auth';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import {useAuth} from '../context/AuthContext';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { useAuth } from '../context/AuthContext';
 
 GoogleSignin.configure({
   webClientId:
-    '163246190332-e1ecm5aaflfsti85p0pdc4j5vqd726jd.apps.googleusercontent.com', // Full Web Client ID
+    '163246190332-e1ecm5aaflfsti85p0pdc4j5vqd726jd.apps.googleusercontent.com',
   offlineAccess: true, // For refreshing tokens
   forceCodeForRefreshToken: true,
 });
 
-const RegisterScreen = ({navigation}: any) => {
-  const {setUser} = useAuth();
+const RegisterScreen = ({ navigation }: any) => {
+  const { setUser } = useAuth();
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -77,7 +77,7 @@ const RegisterScreen = ({navigation}: any) => {
     try {
       await auth().createUserWithEmailAndPassword(email, password);
       Alert.alert('Success', 'Registration Successful', [
-        {text: 'OK', onPress: () => navigation.navigate('Login')},
+        { text: 'OK', onPress: () => navigation.navigate('Login') },
       ]);
     } catch (error: unknown) {
       if (error instanceof Error) {
@@ -91,8 +91,8 @@ const RegisterScreen = ({navigation}: any) => {
   // Google Sign-In
   const handleGoogleSignIn = async () => {
     try {
-      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-      const {type, data}: any = await GoogleSignin.signIn();
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+      const { type, data }: any = await GoogleSignin.signIn();
       if (!data.idToken) throw new Error('No ID Token received');
       if (type === 'success') {
         const googleCredential = auth.GoogleAuthProvider.credential(
@@ -102,7 +102,7 @@ const RegisterScreen = ({navigation}: any) => {
         setUser(true);
       } else if (type === 'cancelled') {
         Alert.alert('Cancelled', 'User Cancelled SignIn', [
-          {text: 'OK', onPress: () => navigation.navigate('Home')},
+          { text: 'OK', onPress: () => navigation.navigate('Home') },
         ]);
       }
     } catch (error: unknown) {
@@ -140,7 +140,7 @@ const RegisterScreen = ({navigation}: any) => {
       <TouchableOpacity
         onPress={() => setShowPicker(true)}
         style={styles.input}>
-        <Text style={{color: dob ? '#333' : '#888'}}>
+        <Text style={{ color: dob ? '#333' : '#888' }}>
           {dob ? dob.toDateString() : 'Select Date of Birth'}
         </Text>
       </TouchableOpacity>
